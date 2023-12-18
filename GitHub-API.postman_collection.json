@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "c7fc67a5-dfa4-4ac5-854f-db59680332b0",
+		"name": "GitHub-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2437125"
+	},
+	"item": [
+		{
+			"name": "GetAllRepos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/user/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSpecific_Repos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/:owner/:repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repos"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "malayparikh"
+						},
+						{
+							"key": "repos",
+							"value": "Phase-2_TestNG"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

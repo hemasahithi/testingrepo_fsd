@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "dbb79187-46d5-40ab-97e3-9e9508e5ae40",
+		"name": "OpenWeather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31715041"
+	},
+	"item": [
+		{
+			"name": "GetLatLon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat=55.75&lon=37.62&appid=e091f6d3429e63f4d22f3afe49f0ede1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "55.75"
+						},
+						{
+							"key": "lon",
+							"value": "37.62"
+						},
+						{
+							"key": "appid",
+							"value": "e091f6d3429e63f4d22f3afe49f0ede1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCity",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.environment.set(\"City\", \"London,uk\");\r",
+							"pm.globals.set(\"global_var1\", \"global-1\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}q={{City}}&appid={{Apikey}}",
+					"host": [
+						"{{Base_Url}}q={{City}}&appid={{Apikey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CityBylanguage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_Url}}id=524901&lang=fr&appid={{Apikey}}",
+					"host": [
+						"{{Base_Url}}id=524901&lang=fr&appid={{Apikey}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
